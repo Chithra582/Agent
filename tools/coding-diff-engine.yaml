@@ -1,0 +1,18 @@
+name: "coding-diff-engine"
+description: "Inspects source files, parses unified diffs, validates patch boundaries, and executes targeted line replacements."
+input_schema:
+  type: "object"
+  properties:
+    target_path:
+      type: "string"
+      description: "Absolute or relative file path to inspect or modify."
+    action:
+      type: "string"
+      enum: ["read", "write", "patch", "search"]
+      description: "File operation to perform."
+    patch_content:
+      type: "string"
+      description: "Unified diff or replacement content when action is patch or write."
+  required:
+    - "target_path"
+    - "action"

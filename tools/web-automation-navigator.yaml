@@ -1,0 +1,16 @@
+name: "web-automation-navigator"
+description: "Automates web browser navigation, page DOM inspection, and structured documentation retrieval."
+input_schema:
+  type: "object"
+  properties:
+    url:
+      type: "string"
+      description: "Target URL to navigate to and inspect."
+    selector:
+      type: "string"
+      description: "CSS or XPath selector for targeted element extraction."
+    extract_text_only:
+      type: "boolean"
+      description: "Whether to extract plain markdown/text stripped of HTML markup."
+  required:
+    - "url"

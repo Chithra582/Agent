@@ -1,0 +1,22 @@
+name: "multi-provider-orchestrator"
+description: "Routes inference requests across 23 LLM providers, manages token compaction, and enforces provider failovers."
+input_schema:
+  type: "object"
+  properties:
+    prompt_payload:
+      type: "string"
+      description: "Formatted prompt messages or structured tool calling schema."
+    preferred_provider:
+      type: "string"
+      description: "Primary LLM provider identifier (e.g., claude, codex, openai, deepseek, ollama)."
+    fallback_chain:
+      type: "array"
+      items:
+        type: "string"
+      description: "Ordered list of fallback provider IDs to utilize on failure."
+    max_tokens:
+      type: "integer"
+      description: "Token generation cap for the response."
+  required:
+    - "prompt_payload"
+    - "preferred_provider"

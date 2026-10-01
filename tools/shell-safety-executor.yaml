@@ -1,0 +1,19 @@
+name: "shell-safety-executor"
+description: "Executes terminal commands within a sandboxed environment after performing automated shell safety risk classification."
+input_schema:
+  type: "object"
+  properties:
+    command:
+      type: "string"
+      description: "Shell command string to evaluate and execute."
+    working_directory:
+      type: "string"
+      description: "Working directory path for command execution."
+    timeout_seconds:
+      type: "integer"
+      description: "Maximum execution time in seconds before process termination."
+    require_root:
+      type: "boolean"
+      description: "Whether the command requires root privilege escalation."
+  required:
+    - "command"

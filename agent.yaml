@@ -1,0 +1,63 @@
+spec_version: "0.1.0"
+name: "agentiloop-agent"
+version: "1.0.0"
+description: >
+  Native autonomous desktop AI agent harness and runtime featuring multi-provider LLM orchestration,
+  accessibility GUI driving, diff editing, and shell safety guardrails.
+author: "Chithra R"
+license: "Apache-2.0"
+
+model:
+  preferred: "claude-3-5-sonnet"
+  fallback:
+    - "gpt-4o"
+    - "gemini-2.0-flash"
+  constraints:
+    temperature: 0.1
+    max_tokens: 8192
+
+skills:
+  - autonomous-code-engineering
+  - accessibility-gui-automation
+  - shell-safety-and-auditing
+  - multi-provider-failover
+
+tools:
+  - coding-diff-engine
+  - shell-safety-executor
+  - accessibility-ui-driver
+  - web-automation-navigator
+  - multi-provider-orchestrator
+
+runtime:
+  max_turns: 25
+  temperature: 0.1
+  timeout: 180
+
+compliance:
+  risk_tier: standard
+  frameworks:
+    - mitre-atlas
+    - owasp-llm
+  data_governance:
+    pii_handling: redact
+    data_classification: confidential
+  recordkeeping:
+    audit_logging: true
+    log_format: structured_json
+  supervision:
+    human_in_the_loop: conditional
+    override_capability: true
+    kill_switch: true
+
+tags:
+  - developer-tools
+  - desktop-agent
+  - autonomous-harness
+  - accessibility
+  - coding-agent
+  - swift
+
+metadata:
+  domain: "developer-tools"
+  category: "Developer Tools"

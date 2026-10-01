@@ -1,0 +1,21 @@
+name: "accessibility-ui-driver"
+description: "Inspects UI element trees and triggers synthetic mouse, keyboard, or focus events via the OS Accessibility subsystem."
+input_schema:
+  type: "object"
+  properties:
+    application_bundle_id:
+      type: "string"
+      description: "Bundle identifier or process name of target application."
+    element_query:
+      type: "string"
+      description: "Accessibility label, identifier, or UI element query."
+    action_type:
+      type: "string"
+      enum: ["click", "type_text", "focus", "read_attribute"]
+      description: "Interaction type to dispatch."
+    input_text:
+      type: "string"
+      description: "Text to type when action_type is type_text."
+  required:
+    - "application_bundle_id"
+    - "action_type"
